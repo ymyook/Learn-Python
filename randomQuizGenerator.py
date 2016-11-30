@@ -29,7 +29,7 @@ for quizNum in range(35):
     random.shuffle(capkeys)
     #write questions
     for questionNumber in range(50):
-        quizFile.write(str(quizNum+1) + '. What is the capital of ' + capkeys[questionNumber] + '\n')
+        quizFile.write(str(questionNumber+1) + '. What is the capital of ' + capkeys[questionNumber] + '?\n')
         wrongAnswers=list(capitals.values())
         correctAnswer = capitals[capkeys[questionNumber]]
         random.shuffle(wrongAnswers)
@@ -39,9 +39,8 @@ for quizNum in range(35):
         random.shuffle(answerOptions)
         for option in range(4):
             quizFile.write(' %s. %s\n' % ('ABCD'[option], answerOptions[option]))
+        keyFile.write(str(questionNumber + 1) + '. %s\n' % ('ABCD'[answerOptions.index(correctAnswer)]))
         quizFile.write('\n')
-        
-        keyFile.write(str(questionNumber + 1) + '. %s' % ('ABCD'[option]))
         quizFile.close
         keyFile.close
 
