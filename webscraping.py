@@ -2,9 +2,9 @@ import webbrowser
 from Tkinter import *
 
 master = Tk()
+master.title("Search Amazon")
 e=Entry(master)
 e.pack()
-
 e.focus_set()
 
 def callback():
